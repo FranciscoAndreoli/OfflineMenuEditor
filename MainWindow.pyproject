@@ -1,0 +1,3 @@
+{
+    "files": ["main.py","JSONModel.py","JSONFileManager.py","JSONEditor.py","mainwindow.py","form.ui","JSONValidator.py"]
+}
