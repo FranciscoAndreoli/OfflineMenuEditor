@@ -10,22 +10,22 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.JSONFileManager = JSON_File_Manager
-        self.JSONEditor = JSON_Editor
-        self.JSONModel = JSON_Model
-        self.JSONValidator = JSON_Validator
+    #     self.JSONFileManager = JSON_File_Manager
+    #     self.JSONEditor = JSON_Editor
+    #     self.JSONModel = JSON_Model
+    #     self.JSONValidator = JSON_Validator
 
-        self.ui.buttonSaveSlot1.clicked.connect(lambda:self.saveToFileSlot("Slot1.json", self.ui.textEditSlot1))
-        self.ui.buttonSaveSlot2.clicked.connect(lambda:self.saveToFileSlot("Slot2.json", self.ui.textEditSlot2))
-        self.ui.buttonSaveSlot3.clicked.connect(lambda:self.saveToFileSlot("Slot3.json", self.ui.textEditSlot3))
-        self.ui.buttonGetSlot1.clicked.connect(lambda: self.getFileSlot("Slot1.json", self.ui.textEditSlot1))
-        self.ui.buttonGetSlot2.clicked.connect(lambda: self.getFileSlot("Slot2.json", self.ui.textEditSlot2))
-        self.ui.buttonGetSlot3.clicked.connect(lambda: self.getFileSlot("Slot3.json", self.ui.textEditSlot3))
+    #     self.ui.buttonSaveSlot1.clicked.connect(lambda:self.saveToFileSlot("Slot1.json", self.ui.textEditSlot1))
+    #     self.ui.buttonSaveSlot2.clicked.connect(lambda:self.saveToFileSlot("Slot2.json", self.ui.textEditSlot2))
+    #     self.ui.buttonSaveSlot3.clicked.connect(lambda:self.saveToFileSlot("Slot3.json", self.ui.textEditSlot3))
+    #     self.ui.buttonGetSlot1.clicked.connect(lambda: self.getFileSlot("Slot1.json", self.ui.textEditSlot1))
+    #     self.ui.buttonGetSlot2.clicked.connect(lambda: self.getFileSlot("Slot2.json", self.ui.textEditSlot2))
+    #     self.ui.buttonGetSlot3.clicked.connect(lambda: self.getFileSlot("Slot3.json", self.ui.textEditSlot3))
 
-    def saveToFileSlot(self,filename, textEdit):
-        text = textEdit.toPlainText()
-        self.JSONFileManager.saveToFile(text, filename)
+    # def saveToFileSlot(self,filename, textEdit):
+    #     text = textEdit.toPlainText()
+    #     self.JSONFileManager.saveToFile(text, filename)
 
-    def getFileSlot(self, filename, textEdit):
-        text = self.JSONFileManager.getFile(filename)
-        textEdit.setPlainText(text)
+    # def getFileSlot(self, filename, textEdit):
+    #     text = self.JSONFileManager.getFile(filename)
+    #     textEdit.setPlainText(text)
