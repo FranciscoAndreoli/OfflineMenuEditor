@@ -16,10 +16,11 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QMainWindow, QMenu, QMenuBar, QPlainTextEdit,
-    QPushButton, QSizePolicy, QSpacerItem, QStatusBar,
-    QTabWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
+    QLabel, QMainWindow, QMenu, QMenuBar,
+    QPlainTextEdit, QPushButton, QSizePolicy, QSpacerItem,
+    QStatusBar, QTabWidget, QTableWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
 
 from DragDrop import DragDrop
 
@@ -27,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1146, 656)
+        MainWindow.resize(1146, 891)
         MainWindow.setStyleSheet(u"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -371,10 +372,6 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_2.addWidget(self.frameJsonOptions)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_2.addItem(self.verticalSpacer)
 
         self.tabWidget.addTab(self.slot1, "")
         self.slot2 = QWidget()
@@ -1672,10 +1669,90 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_14.addWidget(self.tabWidget)
 
+        self.frame = QFrame(self.centralwidget)
+        self.frame.setObjectName(u"frame")
+        sizePolicy3.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy3)
+        self.frame.setMinimumSize(QSize(0, 400))
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame)
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.frameMainTable = QFrame(self.frame)
+        self.frameMainTable.setObjectName(u"frameMainTable")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.frameMainTable.sizePolicy().hasHeightForWidth())
+        self.frameMainTable.setSizePolicy(sizePolicy4)
+        self.frameMainTable.setFrameShape(QFrame.StyledPanel)
+        self.frameMainTable.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_28 = QVBoxLayout(self.frameMainTable)
+        self.verticalLayout_28.setSpacing(0)
+        self.verticalLayout_28.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_28.setObjectName(u"verticalLayout_28")
+        self.mainTable = QTableWidget(self.frameMainTable)
+        if (self.mainTable.columnCount() < 5):
+            self.mainTable.setColumnCount(5)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.mainTable.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.mainTable.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.mainTable.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.mainTable.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.mainTable.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        if (self.mainTable.rowCount() < 1):
+            self.mainTable.setRowCount(1)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.mainTable.setVerticalHeaderItem(0, __qtablewidgetitem5)
+        self.mainTable.setObjectName(u"mainTable")
+
+        self.verticalLayout_28.addWidget(self.mainTable)
+
+
+        self.horizontalLayout_6.addWidget(self.frameMainTable)
+
+        self.frameButtonsRow = QFrame(self.frame)
+        self.frameButtonsRow.setObjectName(u"frameButtonsRow")
+        self.frameButtonsRow.setFrameShape(QFrame.StyledPanel)
+        self.frameButtonsRow.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frameButtonsRow)
+        self.verticalLayout_7.setSpacing(0)
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.buttonNewRow = QPushButton(self.frameButtonsRow)
+        self.buttonNewRow.setObjectName(u"buttonNewRow")
+        self.buttonNewRow.setMinimumSize(QSize(100, 0))
+
+        self.verticalLayout_7.addWidget(self.buttonNewRow)
+
+        self.buttonCopyRow = QPushButton(self.frameButtonsRow)
+        self.buttonCopyRow.setObjectName(u"buttonCopyRow")
+        self.buttonCopyRow.setMinimumSize(QSize(100, 0))
+
+        self.verticalLayout_7.addWidget(self.buttonCopyRow)
+
+        self.buttonRemoveRow = QPushButton(self.frameButtonsRow)
+        self.buttonRemoveRow.setObjectName(u"buttonRemoveRow")
+        self.buttonRemoveRow.setMinimumSize(QSize(100, 0))
+
+        self.verticalLayout_7.addWidget(self.buttonRemoveRow)
+
+
+        self.horizontalLayout_6.addWidget(self.frameButtonsRow, 0, Qt.AlignRight|Qt.AlignTop)
+
+
+        self.verticalLayout_14.addWidget(self.frame)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1146, 25))
+        self.menubar.setGeometry(QRect(0, 0, 1146, 22))
         self.menuOME = QMenu(self.menubar)
         self.menuOME.setObjectName(u"menuOME")
         MainWindow.setMenuBar(self.menubar)
@@ -1687,7 +1764,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(4)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1780,6 +1857,21 @@ class Ui_MainWindow(object):
         self.menuImage_5.setText(QCoreApplication.translate("MainWindow", u"IMAGE", None))
         self.buttonLoadAll_5.setText(QCoreApplication.translate("MainWindow", u"LOAD ALL", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.slot5), QCoreApplication.translate("MainWindow", u"Slot 5", None))
+        ___qtablewidgetitem = self.mainTable.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"1", None));
+        ___qtablewidgetitem1 = self.mainTable.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem2 = self.mainTable.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"3", None));
+        ___qtablewidgetitem3 = self.mainTable.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"4", None));
+        ___qtablewidgetitem4 = self.mainTable.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"5", None));
+        ___qtablewidgetitem5 = self.mainTable.verticalHeaderItem(0)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"filaPorDefecto", None));
+        self.buttonNewRow.setText(QCoreApplication.translate("MainWindow", u"New", None))
+        self.buttonCopyRow.setText(QCoreApplication.translate("MainWindow", u"Copy", None))
+        self.buttonRemoveRow.setText(QCoreApplication.translate("MainWindow", u"Remove", None))
         self.menuOME.setTitle(QCoreApplication.translate("MainWindow", u"OME", None))
     # retranslateUi
 

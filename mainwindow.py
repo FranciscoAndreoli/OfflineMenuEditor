@@ -1,6 +1,6 @@
 # This Python file uses the following encoding: utf-8
 #import sys
-from PySide6.QtWidgets import QMainWindow, QMessageBox, QDialog, QVBoxLayout, QTextEdit, QPushButton, QFileDialog
+from PySide6.QtWidgets import QMainWindow, QMessageBox, QDialog, QVBoxLayout, QTextEdit, QPushButton, QFileDialog, QTableWidgetItem, QHeaderView
 #from PySide6.QtGui import QDragEnterEvent, QDropEvent
 from ui_form import Ui_MainWindow
 #from DragDrop import DragDrop
@@ -37,6 +37,15 @@ class MainWindow(QMainWindow):
         self.ui.buttonDrop_4.clicked.connect(lambda:self.uploadJsonFromDragDropButton("Slot4.json"))
         self.ui.buttonDrop_5.clicked.connect(lambda:self.uploadJsonFromDragDropButton("Slot5.json"))
 
+        self.ui.buttonNewRow.clicked.connect(self.addRow)
+        self.ui.buttonCopyRow.clicked.connect(self.copyRow)
+        self.ui.buttonRemoveRow.clicked.connect(self.removeRow)
+
+        listaColumnas = ["MenuID", "Section / Item name", "Section Description / Item options (master)", "Item options (sub)", "Price"]
+        self.ui.mainTable.setHorizontalHeaderLabels(listaColumnas)
+        self.ui.mainTable.setCellWidget(0, 4, self.ui.buttonNewRow)
+        self.ui.mainTable.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)       
+        
 
     def uploadJsonFromDragDropButton(self,filename):
         print("Button pressed: " + filename)
@@ -65,6 +74,23 @@ class MainWindow(QMainWindow):
             self.openJsonViewer(jsonData)
         else:
             QMessageBox.critical(self, "Error", "Error decoding JSON file: " + filename)
+
+    def addRow(self):
+        rowCount = self.ui.mainTable.rowCount()
+        self.ui.mainTable.insertRow(rowCount - 1)
+
+    def removeRow(self):
+        if self.ui.mainTable.rowCount() > 0:
+            self.ui.mainTable.removeRow(self.ui.mainTable.currentRow())
+
+    def copyRow(self):
+        currentRow = self.ui.mainTable.currentRow()
+        self.ui.mainTable.insertRow(self.ui.mainTable.currentRow())
+        columnCount = self.ui.mainTable.columnCount()
+
+        for j in range(columnCount):
+            if not self.ui.mainTable.item(currentRow + 1, j) is None:
+                self.ui.mainTable.setItem(currentRow, j, QTableWidgetItem(self.ui.mainTable.item(currentRow + 1, j).text()))
 
 
     def openJsonViewer(self, jsonData):
