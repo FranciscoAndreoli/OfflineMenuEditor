@@ -21,6 +21,8 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QPushButton, QSizePolicy, QSpacerItem, QStatusBar,
     QTabWidget, QVBoxLayout, QWidget)
 
+from DragDrop import DragDrop
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -248,6 +250,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.buttonDrop = DragDrop(self.frameDropFiles)
+        self.buttonDrop.setObjectName(u"buttonDrop")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.buttonDrop.sizePolicy().hasHeightForWidth())
+        self.buttonDrop.setSizePolicy(sizePolicy2)
+
+        self.horizontalLayout_3.addWidget(self.buttonDrop)
+
 
         self.horizontalLayout.addWidget(self.frameDropFiles)
 
@@ -270,11 +282,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.boxJsonLoader = QPlainTextEdit(self.frameJson)
         self.boxJsonLoader.setObjectName(u"boxJsonLoader")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.boxJsonLoader.sizePolicy().hasHeightForWidth())
-        self.boxJsonLoader.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.boxJsonLoader.sizePolicy().hasHeightForWidth())
+        self.boxJsonLoader.setSizePolicy(sizePolicy3)
         self.boxJsonLoader.setAutoFillBackground(True)
         self.boxJsonLoader.setStyleSheet(u"")
 
@@ -293,11 +305,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.buttonUploadJson = QPushButton(self.frameUploadExisting)
         self.buttonUploadJson.setObjectName(u"buttonUploadJson")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.buttonUploadJson.sizePolicy().hasHeightForWidth())
-        self.buttonUploadJson.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.buttonUploadJson.sizePolicy().hasHeightForWidth())
+        self.buttonUploadJson.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_2.addWidget(self.buttonUploadJson)
 
@@ -570,6 +579,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_39.setSpacing(0)
         self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
+        self.buttonDrop_2 = DragDrop(self.frameDropFiles_2)
+        self.buttonDrop_2.setObjectName(u"buttonDrop_2")
+        sizePolicy2.setHeightForWidth(self.buttonDrop_2.sizePolicy().hasHeightForWidth())
+        self.buttonDrop_2.setSizePolicy(sizePolicy2)
+
+        self.horizontalLayout_39.addWidget(self.buttonDrop_2)
+
 
         self.horizontalLayout_38.addWidget(self.frameDropFiles_2)
 
@@ -592,8 +608,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
         self.boxJsonLoader_2 = QPlainTextEdit(self.frameJson_2)
         self.boxJsonLoader_2.setObjectName(u"boxJsonLoader_2")
-        sizePolicy2.setHeightForWidth(self.boxJsonLoader_2.sizePolicy().hasHeightForWidth())
-        self.boxJsonLoader_2.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.boxJsonLoader_2.sizePolicy().hasHeightForWidth())
+        self.boxJsonLoader_2.setSizePolicy(sizePolicy3)
         self.boxJsonLoader_2.setAutoFillBackground(True)
         self.boxJsonLoader_2.setStyleSheet(u"")
 
@@ -612,8 +628,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
         self.buttonUploadJson_2 = QPushButton(self.frameUploadExisting_2)
         self.buttonUploadJson_2.setObjectName(u"buttonUploadJson_2")
-        sizePolicy3.setHeightForWidth(self.buttonUploadJson_2.sizePolicy().hasHeightForWidth())
-        self.buttonUploadJson_2.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.buttonUploadJson_2.sizePolicy().hasHeightForWidth())
+        self.buttonUploadJson_2.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_41.addWidget(self.buttonUploadJson_2)
 
@@ -886,6 +902,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_43.setSpacing(0)
         self.horizontalLayout_43.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
+        self.buttonDrop_3 = DragDrop(self.frameDropFiles_3)
+        self.buttonDrop_3.setObjectName(u"buttonDrop_3")
+        sizePolicy2.setHeightForWidth(self.buttonDrop_3.sizePolicy().hasHeightForWidth())
+        self.buttonDrop_3.setSizePolicy(sizePolicy2)
+
+        self.horizontalLayout_43.addWidget(self.buttonDrop_3)
+
 
         self.horizontalLayout_42.addWidget(self.frameDropFiles_3)
 
@@ -908,8 +931,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_44.setObjectName(u"horizontalLayout_44")
         self.boxJsonLoader_3 = QPlainTextEdit(self.frameJson_3)
         self.boxJsonLoader_3.setObjectName(u"boxJsonLoader_3")
-        sizePolicy2.setHeightForWidth(self.boxJsonLoader_3.sizePolicy().hasHeightForWidth())
-        self.boxJsonLoader_3.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.boxJsonLoader_3.sizePolicy().hasHeightForWidth())
+        self.boxJsonLoader_3.setSizePolicy(sizePolicy3)
         self.boxJsonLoader_3.setAutoFillBackground(True)
         self.boxJsonLoader_3.setStyleSheet(u"")
 
@@ -928,8 +951,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_45.setObjectName(u"horizontalLayout_45")
         self.buttonUploadJson_3 = QPushButton(self.frameUploadExisting_3)
         self.buttonUploadJson_3.setObjectName(u"buttonUploadJson_3")
-        sizePolicy3.setHeightForWidth(self.buttonUploadJson_3.sizePolicy().hasHeightForWidth())
-        self.buttonUploadJson_3.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.buttonUploadJson_3.sizePolicy().hasHeightForWidth())
+        self.buttonUploadJson_3.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_45.addWidget(self.buttonUploadJson_3)
 
@@ -1202,6 +1225,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_53.setSpacing(0)
         self.horizontalLayout_53.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_53.setObjectName(u"horizontalLayout_53")
+        self.buttonDrop_4 = DragDrop(self.frameDropFiles_4)
+        self.buttonDrop_4.setObjectName(u"buttonDrop_4")
+        sizePolicy2.setHeightForWidth(self.buttonDrop_4.sizePolicy().hasHeightForWidth())
+        self.buttonDrop_4.setSizePolicy(sizePolicy2)
+
+        self.horizontalLayout_53.addWidget(self.buttonDrop_4)
+
 
         self.horizontalLayout_52.addWidget(self.frameDropFiles_4)
 
@@ -1224,8 +1254,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
         self.boxJsonLoader_4 = QPlainTextEdit(self.frameJson_4)
         self.boxJsonLoader_4.setObjectName(u"boxJsonLoader_4")
-        sizePolicy2.setHeightForWidth(self.boxJsonLoader_4.sizePolicy().hasHeightForWidth())
-        self.boxJsonLoader_4.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.boxJsonLoader_4.sizePolicy().hasHeightForWidth())
+        self.boxJsonLoader_4.setSizePolicy(sizePolicy3)
         self.boxJsonLoader_4.setAutoFillBackground(True)
         self.boxJsonLoader_4.setStyleSheet(u"")
 
@@ -1244,8 +1274,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_55.setObjectName(u"horizontalLayout_55")
         self.buttonUploadJson_4 = QPushButton(self.frameUploadExisting_4)
         self.buttonUploadJson_4.setObjectName(u"buttonUploadJson_4")
-        sizePolicy3.setHeightForWidth(self.buttonUploadJson_4.sizePolicy().hasHeightForWidth())
-        self.buttonUploadJson_4.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.buttonUploadJson_4.sizePolicy().hasHeightForWidth())
+        self.buttonUploadJson_4.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_55.addWidget(self.buttonUploadJson_4)
 
@@ -1518,6 +1548,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_63.setSpacing(0)
         self.horizontalLayout_63.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_63.setObjectName(u"horizontalLayout_63")
+        self.buttonDrop_5 = DragDrop(self.frameDropFiles_5)
+        self.buttonDrop_5.setObjectName(u"buttonDrop_5")
+        sizePolicy2.setHeightForWidth(self.buttonDrop_5.sizePolicy().hasHeightForWidth())
+        self.buttonDrop_5.setSizePolicy(sizePolicy2)
+
+        self.horizontalLayout_63.addWidget(self.buttonDrop_5)
+
 
         self.horizontalLayout_62.addWidget(self.frameDropFiles_5)
 
@@ -1540,8 +1577,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_64.setObjectName(u"horizontalLayout_64")
         self.boxJsonLoader_5 = QPlainTextEdit(self.frameJson_5)
         self.boxJsonLoader_5.setObjectName(u"boxJsonLoader_5")
-        sizePolicy2.setHeightForWidth(self.boxJsonLoader_5.sizePolicy().hasHeightForWidth())
-        self.boxJsonLoader_5.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.boxJsonLoader_5.sizePolicy().hasHeightForWidth())
+        self.boxJsonLoader_5.setSizePolicy(sizePolicy3)
         self.boxJsonLoader_5.setAutoFillBackground(True)
         self.boxJsonLoader_5.setStyleSheet(u"")
 
@@ -1560,8 +1597,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_65.setObjectName(u"horizontalLayout_65")
         self.buttonUploadJson_5 = QPushButton(self.frameUploadExisting_5)
         self.buttonUploadJson_5.setObjectName(u"buttonUploadJson_5")
-        sizePolicy3.setHeightForWidth(self.buttonUploadJson_5.sizePolicy().hasHeightForWidth())
-        self.buttonUploadJson_5.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.buttonUploadJson_5.sizePolicy().hasHeightForWidth())
+        self.buttonUploadJson_5.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_65.addWidget(self.buttonUploadJson_5)
 
@@ -1638,7 +1675,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1146, 22))
+        self.menubar.setGeometry(QRect(0, 0, 1146, 25))
         self.menuOME = QMenu(self.menubar)
         self.menuOME.setObjectName(u"menuOME")
         MainWindow.setMenuBar(self.menubar)
@@ -1668,6 +1705,7 @@ class Ui_MainWindow(object):
         self.labelPercentageNewTax.setText(QCoreApplication.translate("MainWindow", u"6.000%", None))
         self.buttonRemoveTax.setText(QCoreApplication.translate("MainWindow", u"REMOVE", None))
         self.buttonAddTax.setText(QCoreApplication.translate("MainWindow", u"ADD NEW", None))
+        self.buttonDrop.setText(QCoreApplication.translate("MainWindow", u"Drop files to upload (or click)", None))
         self.buttonUploadJson.setText(QCoreApplication.translate("MainWindow", u"UPLOAD JSON", None))
         self.buttonExistingJson.setText(QCoreApplication.translate("MainWindow", u"EXISTING JSON", None))
         self.LabelMenuImage.setText(QCoreApplication.translate("MainWindow", u"MENU IMAGE", None))
@@ -1684,6 +1722,7 @@ class Ui_MainWindow(object):
         self.labelPercentageNewTax_2.setText(QCoreApplication.translate("MainWindow", u"6.000%", None))
         self.buttonRemoveTax_2.setText(QCoreApplication.translate("MainWindow", u"REMOVE", None))
         self.buttonAddTax_2.setText(QCoreApplication.translate("MainWindow", u"ADD NEW", None))
+        self.buttonDrop_2.setText(QCoreApplication.translate("MainWindow", u"Drop files to upload (or click)", None))
         self.buttonUploadJson_2.setText(QCoreApplication.translate("MainWindow", u"UPLOAD JSON", None))
         self.buttonExistingJson_2.setText(QCoreApplication.translate("MainWindow", u"EXISTING JSON", None))
         self.LabelMenuImage_2.setText(QCoreApplication.translate("MainWindow", u"MENU IMAGE", None))
@@ -1700,6 +1739,7 @@ class Ui_MainWindow(object):
         self.labelPercentageNewTax_3.setText(QCoreApplication.translate("MainWindow", u"6.000%", None))
         self.buttonRemoveTax_3.setText(QCoreApplication.translate("MainWindow", u"REMOVE", None))
         self.buttonAddTax_3.setText(QCoreApplication.translate("MainWindow", u"ADD NEW", None))
+        self.buttonDrop_3.setText(QCoreApplication.translate("MainWindow", u"Drop files to upload (or click)", None))
         self.buttonUploadJson_3.setText(QCoreApplication.translate("MainWindow", u"UPLOAD JSON", None))
         self.buttonExistingJson_3.setText(QCoreApplication.translate("MainWindow", u"EXISTING JSON", None))
         self.LabelMenuImage_3.setText(QCoreApplication.translate("MainWindow", u"MENU IMAGE", None))
@@ -1716,12 +1756,13 @@ class Ui_MainWindow(object):
         self.labelPercentageNewTax_4.setText(QCoreApplication.translate("MainWindow", u"6.000%", None))
         self.buttonRemoveTax_4.setText(QCoreApplication.translate("MainWindow", u"REMOVE", None))
         self.buttonAddTax_4.setText(QCoreApplication.translate("MainWindow", u"ADD NEW", None))
+        self.buttonDrop_4.setText(QCoreApplication.translate("MainWindow", u"Drop files to upload (or click)", None))
         self.buttonUploadJson_4.setText(QCoreApplication.translate("MainWindow", u"UPLOAD JSON", None))
         self.buttonExistingJson_4.setText(QCoreApplication.translate("MainWindow", u"EXISTING JSON", None))
         self.LabelMenuImage_4.setText(QCoreApplication.translate("MainWindow", u"MENU IMAGE", None))
         self.menuImage_4.setText(QCoreApplication.translate("MainWindow", u"IMAGE", None))
         self.buttonLoadAll_4.setText(QCoreApplication.translate("MainWindow", u"LOAD ALL", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.slot4), QCoreApplication.translate("MainWindow", u"P\u00e1gina", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.slot4), QCoreApplication.translate("MainWindow", u"Slot 4", None))
         self.nameOfSlot_5.setText(QCoreApplication.translate("MainWindow", u"NAME OF THE SLOT", None))
         self.labelTaxFrame_5.setText(QCoreApplication.translate("MainWindow", u"Tax Rates", None))
         self.labelTaxType_5.setText(QCoreApplication.translate("MainWindow", u"Tax Type:", None))
@@ -1732,12 +1773,13 @@ class Ui_MainWindow(object):
         self.labelPercentageNewTax_5.setText(QCoreApplication.translate("MainWindow", u"6.000%", None))
         self.buttonRemoveTax_5.setText(QCoreApplication.translate("MainWindow", u"REMOVE", None))
         self.buttonAddTax_5.setText(QCoreApplication.translate("MainWindow", u"ADD NEW", None))
+        self.buttonDrop_5.setText(QCoreApplication.translate("MainWindow", u"Drop files to upload (or click)", None))
         self.buttonUploadJson_5.setText(QCoreApplication.translate("MainWindow", u"UPLOAD JSON", None))
         self.buttonExistingJson_5.setText(QCoreApplication.translate("MainWindow", u"EXISTING JSON", None))
         self.LabelMenuImage_5.setText(QCoreApplication.translate("MainWindow", u"MENU IMAGE", None))
         self.menuImage_5.setText(QCoreApplication.translate("MainWindow", u"IMAGE", None))
         self.buttonLoadAll_5.setText(QCoreApplication.translate("MainWindow", u"LOAD ALL", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.slot5), QCoreApplication.translate("MainWindow", u"P\u00e1gina", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.slot5), QCoreApplication.translate("MainWindow", u"Slot 5", None))
         self.menuOME.setTitle(QCoreApplication.translate("MainWindow", u"OME", None))
     # retranslateUi
 

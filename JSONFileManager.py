@@ -1,7 +1,6 @@
 import os
 import json
 
-
 class JSONFileManager:
     def __init__(self):
 
@@ -12,6 +11,12 @@ class JSONFileManager:
         if not os.path.exists(self.folder_path):
             os.makedirs(self.folder_path)
             print("Folder created, directory = ", self.folder_path)
+
+    @staticmethod
+    def readTextFromFile(file_path):
+        with open(file_path, 'r') as file:
+            file_text = file.read()
+        return file_text
 
     def saveToFile(self, text, filename):
         filepath = os.path.join(self.folder_path, filename)
@@ -36,4 +41,8 @@ class JSONFileManager:
         except json.JSONDecodeError:
             #print("Error decoding JSON file: ", filepath)
             return False, False
+
+    def uploadFileWithDragDropButton(self, file_path, filename):
+        print("Hola ", file_path, " ", filename)
+
 
